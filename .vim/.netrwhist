@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/can/.js/porn.com.js'
+let g:netrw_dirhist_2='/home/can/Desktop/Ödevler/DataStructures/Lab3'
+let g:netrw_dirhist_3='/home/can/.vim'
+let g:netrw_dirhist_4='/var/www/html/differences/app/Models'
