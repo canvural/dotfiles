@@ -48,3 +48,5 @@ fi
 fuck tracker\*
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+. /etc/profile.d/vte.sh
