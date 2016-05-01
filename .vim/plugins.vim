@@ -26,7 +26,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'alvan/vim-closetag'
-Plugin 'dericofilho/vim-phpfmt'
 Plugin 'scrooloose/nerdcommenter'
 
 "All of your Plugins must be added before the following line
