@@ -11,6 +11,8 @@ set complete=.,w,b,u                "Set our desired autocompletion matching.set
 set backupdir=~/vimtmp,.            "Change directory of backup files
 set directory=~/vimtmp,.
 set wildignorecase                  "Ignore case when autocompleting file names
+filetype plugin on
+set nowritebackup
 
 "--------------Formatting----------"
 set nowrap                          " wrap long lines
@@ -103,9 +105,6 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 "/
-:vmap ,x :!tidy -q -i --show-errors 0<CR>
-
-"/
 ""/ Ultisnips
 "/
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -117,8 +116,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "/
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.blade.php"
 
-let g:phpfmt_enable_default_mapping = 1
-
 
 "-------------Auto-Commands--------------"
 
@@ -129,18 +126,20 @@ augroup autosourcing
 augroup END
 
 function! IPhpInsertUse()
-        call PhpInsertUse()
-            call feedkeys('a',  'n')
-        endfunction
-        autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
-        autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
 
 function! IPhpExpandClass()
-        call PhpExpandClass()
-            call feedkeys('a', 'n')
-        endfunction
-        autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
-        autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
 
 vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 

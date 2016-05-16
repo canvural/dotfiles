@@ -45,8 +45,6 @@ if [ -d "/usr/local/java/jdk1.7.0_80" ] ; then
     export PATH="/usr/local/java/jdk1.7.0_80/bin:$PATH"    
 fi
 
-fuck tracker\*
-
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 . /etc/profile.d/vte.sh
